@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flowchart Maker &amp; Online Diagram Software</title>
+    <meta charset="utf-8">
+	
+	<script type="text/javascript">
+
+		var urlParams = (function()
+		{
+			var result = new Object();
+			var params = window.location.search.slice(1).split('&');
+			
+			for (var i = 0; i < params.length; i++)
+			{
+				idx = params[i].indexOf('=');
+				
+				if (idx > 0)
+				{
+					result[params[i].substring(0, idx)] = params[i].substring(idx + 1);
+				}
+			}
+			result['https'] = 1;
+            result['db'] = 0;
+            result['gapi'] = 0;
+            result['od'] = 0;
+            result['gh'] = 0;
+            result['browser'] = 0;
+			result['lang'] = 'zh';
+			result['dev'] = parseInt('<%= htmlWebpackPlugin.options.environment %>');
+			// result['create'] = null;
+			return result;
+		})();
+	</script>
+
+</head>
+<body class="geEditor">
+	<!-- <div><%= htmlWebpackPlugin.options.title %></div> -->
+	<!-- 此为vue弹窗部分ffff -->
+	<div id="vue-app">
+		{{message}}
+		<mian-xpp></mian-xpp>
+	</div>
+</body>
+</html>
